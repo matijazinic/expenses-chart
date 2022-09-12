@@ -1,0 +1,200 @@
+:root {
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+
+  --color-prim-red: hsl(10, 79%, 65%);
+  --color-prim-cyan: hsl(186, 34%, 60%);
+
+  --color-neut-dark: hsl(25, 47%, 15%);
+  --color-neut-mid: hsl(28, 10%, 53%);
+  --color-neut-light: hsl(27, 66%, 92%);
+
+  --color-light-orange: hsl(33, 100%, 98%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--color-neut-light);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  /* padding: 7rem; */
+  border-radius: 2rem;
+}
+
+main > * {
+  border-radius: 0.6rem;
+}
+
+.balance {
+  background-color: var(--color-prim-red);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+
+.balance-title {
+  font-size: 0.75rem;
+}
+
+.balance-amount {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.balance-circles {
+  position: relative;
+}
+
+.balance-left-circle {
+  background-color: transparent;
+  border: 2px solid var(--color-light-orange);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1rem;
+  z-index: 1;
+}
+
+.balance-right-circle {
+  background-color: var(--color-neut-dark);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+
+.spending {
+  padding: 1.5rem;
+  background-color: var(--color-light-orange);
+}
+
+.spending-data {
+  display: flex;
+  gap: 0.75em;
+  flex-direction: row;
+  justify-content: center;
+  padding-block: 3rem;
+}
+
+.spending-bar {
+  width: 2rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  position: relative;
+  transition: 100ms ease-in-out;
+  display: flex;
+  justify-content: center;
+}
+
+.spending-single-day {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  align-items: center;
+}
+
+.single-day-amount {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-light-orange);
+  background-color: var(--color-neut-dark);
+  padding: 4px 8px;
+  position: absolute;
+  border-radius: 0.25rem;
+  top: -1.7rem;
+}
+
+.spending-data-day {
+  position: absolute;
+  bottom: -1.2rem;
+  font-size: 0.7rem;
+  color: var(--color-neut-mid);
+}
+
+hr {
+  border: 1px solid var(--color-neut-light);
+}
+
+.spending-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-block: 1.5rem 0.5rem;
+}
+
+.spending-info-title {
+  font-size: 0.75rem;
+  color: var(--color-neut-mid);
+}
+
+.spending-info-amount {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.spending-info-right {
+  text-align: right;
+  font-size: 0.75rem;
+}
+
+.spending-info-growth {
+  font-weight: 700;
+}
+
+.spending-info-growth-text {
+  color: var(--color-neut-mid);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (max-width: 399px) {
+  .balance,
+  .spending {
+    padding: 0.75rem;
+  }
+
+  .spending-data {
+    gap: 0.5rem;
+  }
+
+  .spending-bar {
+    width: 1.6rem;
+  }
+
+  .single-day-amount {
+    font-size: 0.6rem;
+    padding: 4px;
+  }
+
+  .spending-info-amount {
+    font-size: 1.6em;
+  }
+}
